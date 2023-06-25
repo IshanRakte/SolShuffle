@@ -19,35 +19,43 @@ const Home: NextPage = () => {
   const { mutateAsync: claim, isLoading, error } = useClaimNFT(program);
   const {data: conditions, isLoading: conditionsisLoading} = useClaimConditions(program);
   const {data: metadata, isLoading: metadataIsLoading} = useProgramMetadata(program);
+  const buttonStyle: React.CSSProperties = {
+    backgroundColor: '#4CAF50',
+    border: 'none',
+    color: 'white',
+    padding: '10px 20px',
+    textAlign: 'center',
+    textDecoration: 'none',
+    display: 'inline-block',
+    fontSize: '16px',
+    cursor: 'pointer',
+    borderRadius: '4px',
+  };
+  const paragraphStyle: React.CSSProperties = {
+    width: 750,
+  };
   
-  // Here's how to get the thirdweb SDK instance
-  // const sdk = useSDK();
-  // Here's how to get a nft collection
-  // const { program } = useProgram(
-  //   your_nft_collection_address,
-  //   "nft-collection"
-  // );
-
   return (
     <>
       <div className={styles.container}>
         <div className={styles.iconContainer}>
           <Image
-            src="/cover.png"
-            height={200}
-            width={400}
+            src="/cover2.png"
+            height={300}
+            width={600}
             style={{
               objectFit: "fill",
             }}
             alt="thirdweb"
           />
         </div>
-        <h1 className={styles.h1}>SolShuffle 👋</h1>
-          <p>{metadata?.description}</p>
+        <h1 className={styles.h1}>Digital Hope 🍀</h1>
+          <p style={paragraphStyle}> {metadata?.description}</p>
 
         <WalletMultiButtonDynamic />
+        <br></br>
       
-    <button disabled={isLoading} onClick={() => claim({amount: 1})}>
+    <button disabled={isLoading} onClick={() => claim({amount: 1})} style={buttonStyle}>
       Claim 1 Digital Hope
     </button>
     <p>{conditions?.claimedSupply}/{conditions?.totalAvailableSupply}</p>
