@@ -37,6 +37,8 @@ const Home: NextPage = () => {
   
   return (
     <>
+    <div className={styles.page}>
+      
       <div className={styles.container}>
         <div className={styles.iconContainer}>
           <Image
@@ -59,6 +61,7 @@ const Home: NextPage = () => {
       Claim 1 Digital Hope
     </button>
     <p>{conditions?.claimedSupply}/{conditions?.totalAvailableSupply}</p>
+      </div>
       </div>
     </>
   );

@@ -28,3 +28,16 @@
 .lightPurple {
   color: #e011a7;
 }
+
+.page {
+  /* padding: 12px; */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+}
